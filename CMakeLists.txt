@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.9)
-project(graphs)
+project(main)
 
 file(GLOB SOURCES
   "src/*.c"
@@ -9,5 +9,5 @@ file(GLOB SOURCES
 find_library(NCURSES "ncurses" "/usr/lib")
 add_library(${NCURSES} SHARED IMPORTED)
 
-add_executable(graphs ${SOURCES})
-target_link_libraries(graphs ncurses)
+add_executable(main ${SOURCES})
+target_link_libraries(main ncurses)
