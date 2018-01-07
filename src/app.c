@@ -4,13 +4,15 @@
 #include "maze.h"
 
 void run() {
-  WINDOW* win = initscr();
+  initscr();
   cbreak();
+  noecho();
+  box(stdscr, ACS_VLINE, ACS_HLINE);
 
   int done = 0;
   while(!done) {
     refresh();
-    box(win, ACS_PLUS, ACS_PLUS);
+    draw_maze(stdscr, 1, 1, 2);
   }
 
   endwin();
